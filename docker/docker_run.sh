@@ -13,7 +13,7 @@ CONTAINER_WORKDIR="/workspace/docker_example"
 sudo docker run -it --runtime=nvidia --name=docker_ex --network="bridge" \
 -v ${HOST_WORK_DIR}:${CONTAINER_WORKDIR} \
 -v ${HOST_DATA_DIR}:"/mnt/data" \
--p 8112:8112 \
+-p 8122:8122 \
 -e CONTAINER_UID=${HOST_USER_ID} \
 -e CONTAINER_GID=${HOST_GROUP_ID} \
 -e CONTAINER_UNAME=${HOST_USER_NAME} \
