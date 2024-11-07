@@ -23,17 +23,7 @@ Prerequisite: in Market place, install `Remote - SSH` and `Dev Containers`
 
 Note that VSCode can start a jupyter lab from a .py file with proper formatting (segment cells with `#%%`), so it is not necessary to use the Jupyter lab alone for debugging. You can also create a .ipynb file and open the notebook from VSCode. 
 
-However, one can use the jupyter lab as an easy interface to hold multiple long-life session for training, so that they will not be killed even if you are disconnected from the ssh session. The jupyter lab can be accessed via port forwarding, which is already set up in `docker/docker_run.sh`. For example if we want to use port 8112:
-
-1. Connect to the remote server from local computer with port forwarding. For example in WSL, one should use
-```
-ssh username@server.address -L 8112:locahost:8112
-```
-For putty, please refer to relevant document for port forwarding.
-
-2. Make sure the container is up and running.
-3. Inside the container, start Jupyter lab `jupyter lab --port=8112 --ip=0.0.0.0 --no-browser`.
-4. From any explorer on your local computer, go to `locahost:8112` to visit the jupyter lab.
+Now VSCode has a port forwarding function (the `PORTS` tab to the right of the `TERMINAL` at the bottom of VSCode). You can just start a Jupyter lab using any ssh tool `jupyer lab --no-browser`, and forward the port using the `PORTS` tab via VSCode. It can also directly open the forwarded port in a webpage. But one should not start a jupyerlab in VSCode, otherwise it will be closed after you exit VSCode. 
 
 ## Transferability
 
